@@ -4,8 +4,8 @@ import path from "path";
 /** 1-ENTRANCE **/
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true })); //Trad rqeues support
+app.use(express.json()); //Rest request support
 
 /** 2-SESSIONS **/
 
