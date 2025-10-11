@@ -1,4 +1,4 @@
-//** TASK-G **//
+//** TASK-H **//
 
 function getPositive(arr: number[]): string {
   const positiveNums = arr.filter((num) => num > 0);
