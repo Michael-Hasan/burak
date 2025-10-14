@@ -1,11 +1,22 @@
-//** TASK-H **//
+//** TASK-H-2 **//
 
-function getPositive(arr: number[]): string {
-  const positiveNums = arr.filter((num) => num > 0);
-  return positiveNums.join("");
+function getDigits(s: number | string): string {
+  return String(s).replace(/\D/g, "");
 }
 
-console.log(getPositive([18, -22, 29]));
+// Misol:
+console.log(getDigits("m14i1t"));
+
+//================================================================//
+
+//** TASK-H **//
+
+// function getPositive(arr: number[]): string {
+//   const positiveNums = arr.filter((num) => num > 0);
+//   return positiveNums.join("");
+// }
+
+// console.log(getPositive([18, -22, 29]));
 
 //================================================================//
 
