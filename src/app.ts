@@ -2,12 +2,15 @@ import express from "express";
 import path from "path";
 import router from "./router";
 import routerAdmin from "./routerAdmin";
+import morgan from "morgan";
+import { MORGAN_FORMAT } from "./libs/config";
 
 /** 1-ENTRANCE **/
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true })); //Trad rqeues support
 app.use(express.json()); //Rest request support
+app.use(morgan(MORGAN_FORMAT));
 
 /** 2-SESSIONS **/
 
