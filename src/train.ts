@@ -1,26 +1,46 @@
-//** TASK-I **//
-function majorityElement(arr: number[]): number {
-  const count: Record<number, number> = {};
+//** TASK-J **//
 
-  for (const num of arr) {
-    count[num] = (count[num] || 0) + 1;
-  }
+function findLongestWord(sentence: string): string {
+  const words = sentence.split(" ");
 
-  let maxCount = 0;
-  let majority: number = arr[0];
+  let longest = "";
 
-  for (const num in count) {
-    const value = count[Number(num)];
-    if (value > maxCount) {
-      maxCount = value;
-      majority = Number(num);
+  for (const word of words) {
+    if (word.length > longest.length) {
+      longest = word;
     }
   }
 
-  return majority;
+  return longest;
 }
+console.log(findLongestWord("My name is Michael"));
 
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+//================================================================//
+
+/** TASK-I **/
+// function majorityElement(arr: number[]): number {
+//   const count: Record<number, number> = {};
+
+//   for (const num of arr) {
+//     count[num] = (count[num] || 0) + 1;
+//   }
+
+//   let maxCount = 0;
+//   let majority: number = arr[0];
+
+//   for (const num in count) {
+//     const value = count[Number(num)];
+//     if (value > maxCount) {
+//       maxCount = value;
+//       majority = Number(num);
+//     }
+//   }
+
+//   return majority;
+// }
+
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+
 //================================================================//
 
 //** TASK-H-2 **//
