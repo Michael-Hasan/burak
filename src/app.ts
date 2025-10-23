@@ -5,14 +5,34 @@ import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/config";
 
+import session from "express-session";
+import connectMongoDB from "connect-mongodb-session";
+
+const MongoDBStore = connectMongoDB(session);
+const store = new MongoDBStore({
+  uri: process.env.MONGO_URL as string,
+  collection: "sessions",
+});
+
 /** 1-ENTRANCE **/
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({ extended: true })); //Trad rqeues support
-app.use(express.json()); //Rest request support
+app.use(express.urlencoded({ extended: true })); //Trad req support
+app.use(express.json()); //Rest req support
 app.use(morgan(MORGAN_FORMAT));
 
 /** 2-SESSIONS **/
+app.use(
+  session({
+    secret: String(process.env.SESSION_SECRET),
+    cookie: {
+      maxAge: 1000 * 3600 * 6, //6 hours
+    },
+    store: store,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
 /** 3-VIEWS **/
 app.set("views", path.join(__dirname, "views"));

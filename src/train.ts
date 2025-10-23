@@ -1,19 +1,38 @@
-//** TASK-J **//
+//** TASK-K **//
 
-function findLongestWord(sentence: string): string {
-  const words = sentence.split(" ");
+function countVowels(str: string): number {
+  const vowels: string[] = ["a", "e", "i", "o", "u"];
+  let count: number = 0;
 
-  let longest = "";
-
-  for (const word of words) {
-    if (word.length > longest.length) {
-      longest = word;
+  for (const char of str) {
+    if (vowels.includes(char)) {
+      count++;
     }
   }
 
-  return longest;
+  return count;
 }
-console.log(findLongestWord("My name is Michael"));
+
+console.log(countVowels("marvel"));
+
+//================================================================//
+
+//** TASK-J **//
+
+// function findLongestWord(sentence: string): string {
+//   const words = sentence.split(" ");
+
+//   let longest = "";
+
+//   for (const word of words) {
+//     if (word.length > longest.length) {
+//       longest = word;
+//     }
+//   }
+
+//   return longest;
+// }
+// console.log(findLongestWord("My name is Michael"));
 
 //================================================================//
 
