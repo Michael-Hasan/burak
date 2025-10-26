@@ -5,6 +5,7 @@ import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors from "../libs/Errors";
 
 const memberService = new MemberService();
+
 const memberController: T = {};
 memberController.signup = async (req: Request, res: Response) => {
   try {

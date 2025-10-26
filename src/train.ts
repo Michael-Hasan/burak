@@ -1,19 +1,31 @@
-//** TASK-K **//
+//** TASK-L **//
 
-function countVowels(str: string): number {
-  const vowels: string[] = ["a", "e", "i", "o", "u"];
-  let count: number = 0;
-
-  for (const char of str) {
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
-
-  return count;
+function reverseSentence(str: string): string {
+  const words = str.split(" ");
+  const reversedWords = words.map((word) => word.split("").reverse().join(""));
+  return reversedWords.join(" ");
 }
 
-console.log(countVowels("marvel"));
+console.log(reverseSentence("I am from UZBEKISTAN"));
+
+//================================================================//
+
+//** TASK-K **//
+
+// function countVowels(str: string): number {
+//   const vowels: string[] = ["a", "e", "i", "o", "u"];
+//   let count: number = 0;
+
+//   for (const char of str) {
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countVowels("marvel"));
 
 //================================================================//
 
