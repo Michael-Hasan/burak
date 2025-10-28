@@ -1,12 +1,29 @@
+//** TASK **//
+
+function getSquareNumbers(
+  numbers: number[]
+): { number: number; square: number }[] {
+  return numbers.map((num: number) => {
+    return {
+      number: num,
+      square: num * num,
+    };
+  });
+}
+const result = getSquareNumbers([2, 5, 7]);
+console.log(result);
+
+//================================================================//
+
 //** TASK-L **//
 
-function reverseSentence(str: string): string {
-  const words = str.split(" ");
-  const reversedWords = words.map((word) => word.split("").reverse().join(""));
-  return reversedWords.join(" ");
-}
+// function reverseSentence(str: string): string {
+//   const words = str.split(" ");
+//   const reversedWords = words.map((word) => word.split("").reverse().join(""));
+//   return reversedWords.join(" ");
+// }
 
-console.log(reverseSentence("I am from UZBEKISTAN"));
+// console.log(reverseSentence("I am from UZBEKISTAN"));
 
 //================================================================//
 
