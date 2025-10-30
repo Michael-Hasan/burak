@@ -1,4 +1,4 @@
-import { shapeMoongooseObjectID } from "../libs/config";
+import { shapeIntoMoongooseObjectID } from "../libs/config";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import {
   Product,
@@ -38,7 +38,7 @@ class ProductService {
     id: string,
     input: ProductUpdateInput
   ): Promise<Product> {
-    id = shapeMoongooseObjectID(id);
+    id = shapeIntoMoongooseObjectID(id);
     const result = await this.productModel
       .findByIdAndUpdate({ _id: id }, input, { new: true })
       .exec();

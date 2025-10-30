@@ -1,19 +1,32 @@
-//** TASK **//
+//** TASK-N **//
 
-function getSquareNumbers(
-  numbers: number[]
-): { number: number; square: number }[] {
-  return numbers.map((num: number) => {
-    return {
-      number: num,
-      square: num * num,
-    };
-  });
+function palindromCheck(str: string): boolean {
+  const cleaned = str.toLowerCase().replace(/\s+/g, "");
+  const reversed = cleaned.split("").reverse().join("");
+  return cleaned === reversed;
 }
-const result = getSquareNumbers([2, 5, 7]);
-console.log(result);
+
+console.log(palindromCheck("mom"));
+console.log(palindromCheck("world"));
 
 //================================================================//
+
+// //** TASK-M **//
+
+// function getSquareNumbers(
+//   numbers: number[]
+// ): { number: number; square: number }[] {
+//   return numbers.map((num: number) => {
+//     return {
+//       number: num,
+//       square: num * num,
+//     };
+//   });
+// }
+// const result = getSquareNumbers([2, 5, 7]);
+// console.log(result);
+
+// //================================================================//
 
 //** TASK-L **//
 
