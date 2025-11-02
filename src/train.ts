@@ -1,13 +1,31 @@
-//** TASK-N **//
+//** TASK-O **//
 
-function palindromCheck(str: string): boolean {
-  const cleaned = str.toLowerCase().replace(/\s+/g, "");
-  const reversed = cleaned.split("").reverse().join("");
-  return cleaned === reversed;
+function calculateSumOfNumbers(arr: any[]): number {
+  let sum = 0;
+
+  for (const item of arr) {
+    if (typeof item === "number") {
+      sum += item;
+    }
+  }
+
+  return sum;
 }
 
-console.log(palindromCheck("mom"));
-console.log(palindromCheck("world"));
+console.log(calculateSumOfNumbers([5, "77", { son: 1005 }, false, 15]));
+
+//================================================================//
+
+//** TASK-N **//
+
+// function palindromCheck(str: string): boolean {
+//   const cleaned = str.toLowerCase().replace(/\s+/g, "");
+//   const reversed = cleaned.split("").reverse().join("");
+//   return cleaned === reversed;
+// }
+
+// console.log(palindromCheck("mom"));
+// console.log(palindromCheck("world"));
 
 //================================================================//
 
