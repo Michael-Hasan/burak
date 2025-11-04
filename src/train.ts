@@ -1,18 +1,28 @@
-//** TASK-O **//
+//** TASK-P **//
 
-function calculateSumOfNumbers(arr: any[]): number {
-  let sum = 0;
-
-  for (const item of arr) {
-    if (typeof item === "number") {
-      sum += item;
-    }
-  }
-
-  return sum;
+function objectToArray(obj: Record<string, any>): [string, any][] {
+  return Object.entries(obj);
 }
 
-console.log(calculateSumOfNumbers([5, "77", { son: 1005 }, false, 15]));
+console.log(objectToArray({ Michael: 23, MIT: 31 }));
+
+//================================================================//
+
+//** TASK-O **//
+
+// function calculateSumOfNumbers(arr: any[]): number {
+//   let sum = 0;
+
+//   for (const item of arr) {
+//     if (typeof item === "number") {
+//       sum += item;
+//     }
+//   }
+
+//   return sum;
+// }
+
+// console.log(calculateSumOfNumbers([5, "77", { son: 1005 }, false, 15]));
 
 //================================================================//
 
