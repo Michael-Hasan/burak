@@ -1,10 +1,27 @@
-//** TASK-P **//
+//** TASK-R **//
 
-function objectToArray(obj: Record<string, any>): [string, any][] {
-  return Object.entries(obj);
+function calculate(str: string): number {
+  const parts = str.split("+");
+  let sum = 0;
+
+  for (let i = 0; i < parts.length; i++) {
+    sum += Number(parts[i]);
+  }
+
+  return sum;
 }
 
-console.log(objectToArray({ Michael: 23, MIT: 31 }));
+console.log(calculate("15+15"));
+
+//================================================================//
+
+//** TASK-P **//
+
+// function objectToArray(obj: Record<string, any>): [string, any][] {
+//   return Object.entries(obj);
+// }
+
+// console.log(objectToArray({ Michael: 23, MIT: 31 }));
 
 //================================================================//
 
