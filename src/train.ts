@@ -1,17 +1,33 @@
-//** TASK-R **//
+//** TASK-S **//
 
-function calculate(str: string): number {
-  const parts = str.split("+");
-  let sum = 0;
-
-  for (let i = 0; i < parts.length; i++) {
-    sum += Number(parts[i]);
+function missingNumber(nums: number[]): number {
+  for (let i = 0; i <= nums.length; i++) {
+    if (!nums.includes(i)) {
+      return i;
+    }
   }
-
-  return sum;
+  return -1;
 }
 
-console.log(calculate("15+15"));
+// Test
+console.log(missingNumber([3, 0, 1]));
+
+//================================================================//
+
+//** TASK-R **//
+
+// function calculate(str: string): number {
+//   const parts = str.split("+");
+//   let sum = 0;
+
+//   for (let i = 0; i < parts.length; i++) {
+//     sum += Number(parts[i]);
+//   }
+
+//   return sum;
+// }
+
+// console.log(calculate("15+15"));
 
 //================================================================//
 
