@@ -1,16 +1,25 @@
-//** TASK-S **//
-
-function missingNumber(nums: number[]): number {
-  for (let i = 0; i <= nums.length; i++) {
-    if (!nums.includes(i)) {
-      return i;
-    }
-  }
-  return -1;
+//** TASK-T **//
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  return [...arr1, ...arr2].sort((a, b) => a - b);
 }
 
-// Test
-console.log(missingNumber([3, 0, 1]));
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+//================================================================//
+
+//** TASK-S **//
+
+// function missingNumber(nums: number[]): number {
+//   for (let i = 0; i <= nums.length; i++) {
+//     if (!nums.includes(i)) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
+// // Test
+// console.log(missingNumber([3, 0, 1]));
 
 //================================================================//
 
