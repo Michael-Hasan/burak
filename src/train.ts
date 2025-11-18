@@ -1,9 +1,21 @@
-//** TASK-T **//
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-  return [...arr1, ...arr2].sort((a, b) => a - b);
+//** TASK-U **//
+
+function sumOdds(n: number): number {
+  return Math.floor(n / 2);
 }
 
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+console.log(sumOdds(9));
+console.log(sumOdds(11));
+
+//================================================================//
+
+//** TASK-T **//
+
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+//   return [...arr1, ...arr2].sort((a, b) => a - b);
+// }
+
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
 
 //================================================================//
 
