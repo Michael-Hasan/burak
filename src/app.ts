@@ -19,6 +19,7 @@ const store = new MongoDBStore({
 /** 1-ENTRANCE **/
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({ extended: true })); //Trad req support
 app.use(express.json()); //Rest req support
 app.use(cookieParser());

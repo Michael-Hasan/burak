@@ -1,15 +1,43 @@
 //** TASK-W **//
 
-function chunkArray<T>(arr: T[], size: number): T[][] {
-  const result: T[][] = [];
+function countOccurrences(obj: any, targetKey: string): number {
+  let count = 0;
 
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
+  function recursiveCheck(current: any) {
+    if (typeof current !== "object" || current === null) return;
+
+    for (const key in current) {
+      if (key === targetKey) count++;
+
+      recursiveCheck(current[key]);
+    }
   }
 
-  return result;
+  recursiveCheck(obj);
+  return count;
 }
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+console.log(
+  countOccurrences(
+    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+    "model"
+  )
+);
+
+//================================================================//
+
+//** TASK-W **//
+
+// function chunkArray<T>(arr: T[], size: number): T[][] {
+//   const result: T[][] = [];
+
+//   for (let i = 0; i < arr.length; i += size) {
+//     result.push(arr.slice(i, i + size));
+//   }
+
+//   return result;
+// }
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 //================================================================//
 
