@@ -1,28 +1,38 @@
-//** TASK-W **//
+//** TASK-Y **//
 
-function countOccurrences(obj: any, targetKey: string): number {
-  let count = 0;
-
-  function recursiveCheck(current: any) {
-    if (typeof current !== "object" || current === null) return;
-
-    for (const key in current) {
-      if (key === targetKey) count++;
-
-      recursiveCheck(current[key]);
-    }
-  }
-
-  recursiveCheck(obj);
-  return count;
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  return arr1.filter((value) => arr2.includes(value));
 }
 
-console.log(
-  countOccurrences(
-    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
-    "model"
-  )
-);
+console.log(findIntersection([5, 7, 9], [9, 7, 3]));
+
+//================================================================//
+
+//** TASK-W **//
+
+// function countOccurrences(obj: any, targetKey: string): number {
+//   let count = 0;
+
+//   function recursiveCheck(current: any) {
+//     if (typeof current !== "object" || current === null) return;
+
+//     for (const key in current) {
+//       if (key === targetKey) count++;
+
+//       recursiveCheck(current[key]);
+//     }
+//   }
+
+//   recursiveCheck(obj);
+//   return count;
+// }
+
+// console.log(
+//   countOccurrences(
+//     { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+//     "model"
+//   )
+// );
 
 //================================================================//
 
