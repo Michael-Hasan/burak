@@ -43,8 +43,8 @@ class ProductService {
       .aggregate([
         { $match: match },
         { $sort: sort },
-        { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
-        { $limit: inquiry.limit * 1 },
+        { $skip: (inquiry.page * 1 - 1) * inquiry.limit }, // dont skip
+        { $limit: inquiry.limit * 1 }, // 3ta limit
       ])
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
@@ -75,7 +75,6 @@ class ProductService {
       };
       const existView = await this.viewService.checkViewExistence(input);
 
-      console.log("exist:", !!existView);
       if (!existView) {
         // Insert View
         console.log("PLANNING TO INSERT NEW VIEW");

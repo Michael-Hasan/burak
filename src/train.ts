@@ -1,10 +1,20 @@
 //** TASK-Y **//
 
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  return arr1.filter((value) => arr2.includes(value));
+function sumEvens(arr: number[]): number {
+  return arr.filter((num) => num % 2 === 0).reduce((acc, num) => acc + num, 0);
 }
 
-console.log(findIntersection([5, 7, 9], [9, 7, 3]));
+console.log(sumEvens([11, 14, 17, 6]));
+
+//================================================================//
+
+//** TASK-Y **//
+
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//   return arr1.filter((value) => arr2.includes(value));
+// }
+
+// console.log(findIntersection([5, 7, 9], [9, 7, 3]));
 
 //================================================================//
 

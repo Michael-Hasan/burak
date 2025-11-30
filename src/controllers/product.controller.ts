@@ -15,7 +15,7 @@ productController.getProducts = async (req: Request, res: Response) => {
     console.log("getProducts");
     const { page, limit, order, productCollection, search } = req.query;
     const inquiry: ProductInquiry = {
-      order: String(order),
+      order: String(order), // urlda kelayotgan orderni string qilib ber;
       page: Number(page),
       limit: Number(limit),
     };
@@ -37,8 +37,8 @@ productController.getProducts = async (req: Request, res: Response) => {
 productController.getProduct = async (req: ExtendedRequest, res: Response) => {
   try {
     console.log("getProduct");
-    const { id } = req.params;
-    const memberId = req.member?._id ?? null,
+    const { id } = req.params; // request bolayotgan product
+    const memberId = req.member?._id ?? null, // kim request qilayabdi osha productni
       result = await productService.getProduct(memberId, id);
 
     res.status(HttpCode.OK).json(result);
