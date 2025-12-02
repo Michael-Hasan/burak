@@ -1,10 +1,23 @@
-//** TASK-Y **//
+//** TASK-ZA **//
 
-function sumEvens(arr: number[]): number {
-  return arr.filter((num) => num % 2 === 0).reduce((acc, num) => acc + num, 0);
+interface Person {
+  age: number;
 }
 
-console.log(sumEvens([11, 14, 17, 6]));
+function sortByAge(arr: Person[]): Person[] {
+  return arr.sort((a, b) => a.age - b.age);
+}
+console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+
+//================================================================//
+
+//** TASK-Z **//
+
+// function sumEvens(arr: number[]): number {
+//   return arr.filter((num) => num % 2 === 0).reduce((acc, num) => acc + num, 0);
+// }
+
+// console.log(sumEvens([11, 14, 17, 6]));
 
 //================================================================//
 
