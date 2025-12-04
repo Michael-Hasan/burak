@@ -1,13 +1,24 @@
+//** TASK-ZB **//
+
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
+}
+
+// test
+console.log(celsiusToFahrenheit(0));
+
+//================================================================//
+
 //** TASK-ZA **//
 
-interface Person {
-  age: number;
-}
+// interface Person {
+//   age: number;
+// }
 
-function sortByAge(arr: Person[]): Person[] {
-  return arr.sort((a, b) => a.age - b.age);
-}
-console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+// function sortByAge(arr: Person[]): Person[] {
+//   return arr.sort((a, b) => a.age - b.age);
+// }
+// console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
 
 //================================================================//
 
