@@ -1,11 +1,32 @@
-//** TASK-ZB **//
+//** TASK-ZD **//
 
-function celsiusToFahrenheit(celsius: number): number {
-  return (celsius * 9) / 5 + 32;
+function changeNumberInArray(
+  targetIndex: number,
+  arr: number[],
+  newValue: number
+): number[] {
+  if (targetIndex < 0 || targetIndex >= arr.length) {
+    throw new Error("Index arraydan tashqarida!");
+  }
+
+  const newArray = [...arr];
+  newArray[targetIndex] = newValue;
+
+  return newArray;
 }
 
-// test
-console.log(celsiusToFahrenheit(0));
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+
+//================================================================//
+
+//** TASK-ZC **//
+
+// function celsiusToFahrenheit(celsius: number): number {
+//   return (celsius * 9) / 5 + 32;
+// }
+
+// // test
+// console.log(celsiusToFahrenheit(0));
 
 //================================================================//
 
