@@ -1,21 +1,40 @@
-//** TASK-ZD **//
+//** TASK-ZE **//
 
-function changeNumberInArray(
-  targetIndex: number,
-  arr: number[],
-  newValue: number
-): number[] {
-  if (targetIndex < 0 || targetIndex >= arr.length) {
-    throw new Error("Index arraydan tashqarida!");
+function removeDuplicate(s: string): string {
+  const seen = new Set<string>();
+  let result = "";
+
+  for (const ch of s) {
+    if (!seen.has(ch)) {
+      seen.add(ch);
+      result += ch;
+    }
   }
 
-  const newArray = [...arr];
-  newArray[targetIndex] = newValue;
-
-  return newArray;
+  return result;
 }
+console.log(removeDuplicate("stringg"));
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+//================================================================//
+
+//** TASK-ZD **//
+
+// function changeNumberInArray(
+//   targetIndex: number,
+//   arr: number[],
+//   newValue: number
+// ): number[] {
+//   if (targetIndex < 0 || targetIndex >= arr.length) {
+//     throw new Error("Index arraydan tashqarida!");
+//   }
+
+//   const newArray = [...arr];
+//   newArray[targetIndex] = newValue;
+
+//   return newArray;
+// }
+
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
 
 //================================================================//
 
