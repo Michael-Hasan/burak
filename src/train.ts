@@ -1,19 +1,34 @@
 //** TASK-ZE **//
 
-function removeDuplicate(s: string): string {
-  const seen = new Set<string>();
-  let result = "";
-
-  for (const ch of s) {
-    if (!seen.has(ch)) {
-      seen.add(ch);
-      result += ch;
-    }
-  }
-
-  return result;
+function capitalizeWords(str: string): string {
+  return str
+    .split(" ")
+    .map((word) => {
+      if (word.length <= 2) return word;
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 }
-console.log(removeDuplicate("stringg"));
+console.log(capitalizeWords("my name is michael"));
+
+//================================================================//
+
+//** TASK-ZE **//
+
+// function removeDuplicate(s: string): string {
+//   const seen = new Set<string>();
+//   let result = "";
+
+//   for (const ch of s) {
+//     if (!seen.has(ch)) {
+//       seen.add(ch);
+//       result += ch;
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(removeDuplicate("stringg"));
 
 //================================================================//
 
