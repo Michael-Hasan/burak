@@ -1,15 +1,24 @@
-//** TASK-ZE **//
-
-function capitalizeWords(str: string): string {
-  return str
-    .split(" ")
-    .map((word) => {
-      if (word.length <= 2) return word;
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join(" ");
+//** TASK-ZG **//
+function toSnakeCase(str: string): string {
+  return str.toLowerCase().trim().replace(/\s+/g, "_");
 }
-console.log(capitalizeWords("my name is michael"));
+
+console.log(toSnakeCase("my name is michael"));
+
+//================================================================//
+
+//** TASK-ZF **//
+
+// function capitalizeWords(str: string): string {
+//   return str
+//     .split(" ")
+//     .map((word) => {
+//       if (word.length <= 2) return word;
+//       return word.charAt(0).toUpperCase() + word.slice(1);
+//     })
+//     .join(" ");
+// }
+// console.log(capitalizeWords("my name is michael"));
 
 //================================================================//
 
