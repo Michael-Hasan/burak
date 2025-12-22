@@ -1,9 +1,29 @@
-//** TASK-ZG **//
-function toSnakeCase(str: string): string {
-  return str.toLowerCase().trim().replace(/\s+/g, "_");
+//** TASK-ZH **//
+
+function findDisappearedNumbers(arr: number[]): number[] {
+  const max = Math.max(...arr);
+  const set = new Set(arr);
+  const result: number[] = [];
+
+  for (let i = 1; i <= max; i++) {
+    if (!set.has(i)) {
+      result.push(i);
+    }
+  }
+
+  return result;
 }
 
-console.log(toSnakeCase("my name is michael"));
+console.log(findDisappearedNumbers([1, 3, 4, 7, 9]));
+
+//================================================================//
+
+//** TASK-ZG **//
+// function toSnakeCase(str: string): string {
+//   return str.toLowerCase().trim().replace(/\s+/g, "_");
+// }
+
+// console.log(toSnakeCase("my name is michael"));
 
 //================================================================//
 
