@@ -1,16 +1,36 @@
-//** TASK-ZH **//
+//** TASK-ZJ **//
 
-function delayHelloWorld(message: string): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(message);
-    }, 3000);
-  });
+function reduceNestedArray(arr: any[]): number {
+  let sum = 0;
+
+  for (const item of arr) {
+    if (Array.isArray(item)) {
+      sum += reduceNestedArray(item);
+    } else if (typeof item === "number") {
+      sum += item;
+    }
+  }
+
+  return sum;
 }
 
-delayHelloWorld("3 soniya kutib turing Sherxon aka:)").then((res) => {
-  console.log(res);
-});
+console.log(reduceNestedArray([1, [1, 2, [4]]]));
+
+//================================================================//
+
+//** TASK-ZI **//
+
+// function delayHelloWorld(message: string): Promise<string> {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(message);
+//     }, 3000);
+//   });
+// }
+
+// delayHelloWorld("3 soniya kutib turing Sherxon aka:)").then((res) => {
+//   console.log(res);
+// });
 
 //================================================================//
 
