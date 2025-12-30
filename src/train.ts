@@ -1,16 +1,30 @@
+//** TASK-ZL **//
+
+function stringToKebab(text: string): string {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+console.log(stringToKebab("I am Michael"));
+
+//================================================================//
+
 //** TASK-ZK **//
 
-function printNumbers(): void {
-  let count = 1;
-  const intervalId = setInterval(() => {
-    console.log(count);
-    count++;
-    if (count > 5) {
-      clearInterval(intervalId);
-    }
-  }, 1000);
-}
-printNumbers();
+// function printNumbers(): void {
+//   let count = 1;
+//   const intervalId = setInterval(() => {
+//     console.log(count);
+//     count++;
+//     if (count > 5) {
+//       clearInterval(intervalId);
+//     }
+//   }, 1000);
+// }
+// printNumbers();
 
 //================================================================//
 
