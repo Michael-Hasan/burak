@@ -1,14 +1,31 @@
 //** TASK-ZL **//
 
-function stringToKebab(text: string): string {
-  return text
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, "")
-    .replace(/\s+/g, "-");
+function squareDigits(num: number): string {
+  return num
+    .toString()
+    .split("")
+    .map((digit) => {
+      const n = Number(digit);
+      return (n * n).toString();
+    })
+    .join("");
 }
 
-console.log(stringToKebab("I am Michael"));
+console.log(squareDigits(9119));
+
+//================================================================//
+
+//** TASK-ZL **//
+
+// function stringToKebab(text: string): string {
+//   return text
+//     .trim()
+//     .toLowerCase()
+//     .replace(/[^a-z0-9\s]/g, "")
+//     .replace(/\s+/g, "-");
+// }
+
+// console.log(stringToKebab("I am Michael"));
 
 //================================================================//
 
