@@ -1,17 +1,28 @@
-//** TASK-ZL **//
+//** TASK-ZM **//
 
-function squareDigits(num: number): string {
-  return num
-    .toString()
-    .split("")
-    .map((digit) => {
-      const n = Number(digit);
-      return (n * n).toString();
-    })
-    .join("");
+function rotateArray<T>(arr: T[], index: number): T[] {
+  const rotateCount = index % arr.length;
+  return arr.slice(-rotateCount).concat(arr.slice(0, -rotateCount));
 }
 
-console.log(squareDigits(9119));
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+
+//================================================================//
+
+//** TASK-ZM **//
+
+// function squareDigits(num: number): string {
+//   return num
+//     .toString()
+//     .split("")
+//     .map((digit) => {
+//       const n = Number(digit);
+//       return (n * n).toString();
+//     })
+//     .join("");
+// }
+
+// console.log(squareDigits(9119));
 
 //================================================================//
 
