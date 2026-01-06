@@ -1,11 +1,33 @@
-//** TASK-ZM **//
+//** TASK-ZN **//
 
-function rotateArray<T>(arr: T[], index: number): T[] {
-  const rotateCount = index % arr.length;
-  return arr.slice(-rotateCount).concat(arr.slice(0, -rotateCount));
+function areParenthesesBalanced(str: string): boolean {
+  let count = 0;
+
+  for (const char of str) {
+    if (char === "(") {
+      count++;
+    } else if (char === ")") {
+      count--;
+      if (count < 0) return false;
+    }
+  }
+
+  return count === 0;
 }
 
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+// Testlar
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda"));
+
+//================================================================//
+
+//** TASK-ZN **//
+
+// function rotateArray<T>(arr: T[], index: number): T[] {
+//   const rotateCount = index % arr.length;
+//   return arr.slice(-rotateCount).concat(arr.slice(0, -rotateCount));
+// }
+
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 
 //================================================================//
 
