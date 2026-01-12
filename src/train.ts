@@ -1,22 +1,44 @@
-//** TASK-ZN **//
+//** TASK-ZP **//
 
-function areParenthesesBalanced(str: string): boolean {
-  let count = 0;
+function countNumberAndLetters(input: string): {
+  number: number;
+  letter: number;
+} {
+  let number = 0;
+  let letter = 0;
 
-  for (const char of str) {
-    if (char === "(") {
-      count++;
-    } else if (char === ")") {
-      count--;
-      if (count < 0) return false;
+  for (const char of input) {
+    if (/[0-9]/.test(char)) {
+      number++;
+    } else if (/[a-zA-Z]/.test(char)) {
+      letter++;
     }
   }
 
-  return count === 0;
+  return { number, letter };
 }
 
-// Testlar
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda"));
+console.log(countNumberAndLetters("string152%\\¥"));
+
+//================================================================//
+
+//** TASK-ZO **//
+
+// function areParenthesesBalanced(str: string): boolean {
+//   let count = 0;
+
+//   for (const char of str) {
+//     if (char === "(") {
+//       count++;
+//     } else if (char === ")") {
+//       count--;
+//       if (count < 0) return false;
+//     }
+//   }
+
+//   return count === 0;
+// }
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda"));
 
 //================================================================//
 
