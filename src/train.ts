@@ -1,24 +1,47 @@
-//** TASK-ZP **//
+//** TASK-ZQ **//
 
-function countNumberAndLetters(input: string): {
-  number: number;
-  letter: number;
-} {
-  let number = 0;
-  let letter = 0;
+function findDuplicates(arr: number[]): number[] {
+  const countMap = new Map<number, number>();
+  const result: number[] = [];
 
-  for (const char of input) {
-    if (/[0-9]/.test(char)) {
-      number++;
-    } else if (/[a-zA-Z]/.test(char)) {
-      letter++;
+  for (const num of arr) {
+    countMap.set(num, (countMap.get(num) || 0) + 1);
+  }
+
+  for (const [num, count] of countMap) {
+    if (count >= 2) {
+      result.push(num);
     }
   }
 
-  return { number, letter };
+  return result;
 }
 
-console.log(countNumberAndLetters("string152%\\¥"));
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+
+//================================================================//
+
+//** TASK-ZP **//
+
+// function countNumberAndLetters(input: string): {
+//   number: number;
+//   letter: number;
+// } {
+//   let number = 0;
+//   let letter = 0;
+
+//   for (const char of input) {
+//     if (/[0-9]/.test(char)) {
+//       number++;
+//     } else if (/[a-zA-Z]/.test(char)) {
+//       letter++;
+//     }
+//   }
+
+//   return { number, letter };
+// }
+
+// console.log(countNumberAndLetters("string152%\\¥"));
 
 //================================================================//
 
