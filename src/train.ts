@@ -1,24 +1,34 @@
-//** TASK-ZR **//
+//** TASK-ZS **//
 
-function areArraysEqual<T>(a: T[], b: T[]): boolean {
-  if (a.length !== b.length) return false;
-
-  const countMap = new Map<T, number>();
-
-  for (const item of a) {
-    countMap.set(item, (countMap.get(item) || 0) + 1);
-  }
-
-  for (const item of b) {
-    const count = countMap.get(item);
-    if (!count) return false;
-    count === 1 ? countMap.delete(item) : countMap.set(item, count - 1);
-  }
-
-  return countMap.size === 0;
+function singleNumber(nums: number[]): number {
+  return nums.reduce((acc, n) => acc ^ n, 0);
 }
 
-console.log(areArraysEqual([1, 2, 3, 4], [4, 3, 2, 1]));
+console.log(singleNumber([4, 2, 1, 2, 1]));
+
+//================================================================//
+
+//** TASK-ZR **//
+
+// function areArraysEqual<T>(a: T[], b: T[]): boolean {
+//   if (a.length !== b.length) return false;
+
+//   const countMap = new Map<T, number>();
+
+//   for (const item of a) {
+//     countMap.set(item, (countMap.get(item) || 0) + 1);
+//   }
+
+//   for (const item of b) {
+//     const count = countMap.get(item);
+//     if (!count) return false;
+//     count === 1 ? countMap.delete(item) : countMap.set(item, count - 1);
+//   }
+
+//   return countMap.size === 0;
+// }
+
+// console.log(areArraysEqual([1, 2, 3, 4], [4, 3, 2, 1]));
 
 //================================================================//
 
