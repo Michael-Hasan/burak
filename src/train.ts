@@ -1,6 +1,6 @@
 //** TASK-ZS **//
 
-function firstUniqueCharIndex(str: string): number {
+function firstLetterUniqueCharIndex(str: string): number {
   const freq: Record<string, number> = {};
   for (const ch of str) {
     freq[ch] = (freq[ch] || 0) + 1;
@@ -14,7 +14,7 @@ function firstUniqueCharIndex(str: string): number {
 
   return -1;
 }
-console.log(firstUniqueCharIndex("stamp"));
+console.log(firstLetterUniqueCharIndex("stamp"));
 
 //================================================================//
 
