@@ -1,10 +1,30 @@
 //** TASK-ZS **//
 
-function singleNumber(nums: number[]): number {
-  return nums.reduce((acc, n) => acc ^ n, 0);
-}
+function firstUniqueCharIndex(str: string): number {
+  const freq: Record<string, number> = {};
+  for (const ch of str) {
+    freq[ch] = (freq[ch] || 0) + 1;
+  }
 
-console.log(singleNumber([4, 2, 1, 2, 1]));
+  for (let i = 0; i < str.length; i++) {
+    if (freq[str[i]] === 1) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+console.log(firstUniqueCharIndex("stamp"));
+
+//================================================================//
+
+//** TASK-ZS **//
+
+// function singleNumber(nums: number[]): number {
+//   return nums.reduce((acc, n) => acc ^ n, 0);
+// }
+
+// console.log(singleNumber([4, 2, 1, 2, 1]));
 
 //================================================================//
 
