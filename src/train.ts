@@ -1,20 +1,43 @@
-//** TASK-ZS **//
+//** TASK-ZU **//
 
-function firstLetterUniqueCharIndex(str: string): number {
-  const freq: Record<string, number> = {};
-  for (const ch of str) {
-    freq[ch] = (freq[ch] || 0) + 1;
+function sumOfUnique(nums: number[]): number {
+  const countMap: Record<number, number> = {};
+
+  for (const num of nums) {
+    countMap[num] = (countMap[num] || 0) + 1;
   }
 
-  for (let i = 0; i < str.length; i++) {
-    if (freq[str[i]] === 1) {
-      return i;
+  let sum = 0;
+
+  for (const num in countMap) {
+    if (countMap[num] === 1) {
+      sum += Number(num);
     }
   }
 
-  return -1;
+  return sum;
 }
-console.log(firstLetterUniqueCharIndex("stamp"));
+console.log(sumOfUnique([1, 2, 3, 2]));
+
+//================================================================//
+
+//** TASK-ZT **//
+
+// function firstLetterUniqueCharIndex(str: string): number {
+//   const freq: Record<string, number> = {};
+//   for (const ch of str) {
+//     freq[ch] = (freq[ch] || 0) + 1;
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (freq[str[i]] === 1) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+// console.log(firstLetterUniqueCharIndex("stamp"));
 
 //================================================================//
 
